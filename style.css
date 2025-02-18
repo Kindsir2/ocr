@@ -1,0 +1,157 @@
+:root {
+  --background-color: #f3f3f3;
+  --text-color: #333;
+  --header-bg: linear-gradient(to right, #afd0f7, #9071fe);
+  --header-text: white;
+  --tab-bg: #e0e7ef;
+  --tab-active-bg: #9071fe;
+  --tab-hover-bg: #d9d0fb;
+  --button-bg: #9071fe;
+  --button-hover-bg: #b9a5ff;
+  --card-bg: white;
+  --border-color: #e0e0e0;
+  --output-bg: #f9fafc;
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: linear-gradient(to right,#1a3b64, #302752);
+  --header-text: #e0e0e0;
+  --tab-bg: #2e2e2e;
+  --tab-active-bg: #9071fe;
+  --tab-hover-bg: #5c6bc0;
+  --button-bg: #9071fe;
+  --button-hover-bg: #b6a5f5;
+  --card-bg: #4e4e4e48;
+  --border-color: #424242;
+  --output-bg: #1e1e1e;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+main {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  background-color: var(--tab-bg);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--tab-bg);
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: var(--tab-active-bg);
+  color: white;
+}
+
+.tab:hover {
+  background-color: var(--tab-hover-bg);
+}
+
+.tab-content {
+  display: none;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.output {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--output-bg);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.05);
+  white-space: pre-wrap;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  background-color: var(--button-bg);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+input[type="file"] {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="file"]:hover {
+  background-color: var(--tab-hover-bg);
+}
+
+.theme-toggle {
+  margin: 1rem auto;
+  text-align: center;
+}

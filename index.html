@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Document Processing</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+  <header>
+      <h1>OCR Document Processing</h1>
+  </header>
+  <main>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">Toggle Dark Mode</button>
+  </div>
+      <div class="tabs">
+          <div class="tab active" data-tab="car-certificate" onclick="showTab('car-certificate')">Car Certificate</div>
+          <div class="tab" data-tab="bill-of-lading" onclick="showTab('bill-of-lading')">Bill of Lading</div>
+          <div class="tab" data-tab="universal-invoice" onclick="showTab('universal-invoice')">Universal Invoice</div>
+          <div class="tab" data-tab="id-document" onclick="showTab('id-document')">Other</div>
+      </div>
+      <div id="car-certificate" class="tab-content active">
+          <h2>Car Certificate</h2>
+          <input type="file" accept="image/*,application/pdf" onchange="processFile(this, 'Car Certificate')">
+      </div>
+      <div id="bill-of-lading" class="tab-content">
+          <h2>Bill of Lading</h2>
+          <input type="file" accept="image/*,application/pdf" onchange="processFile(this, 'Bill of Lading')">
+      </div>
+      <div id="universal-invoice" class="tab-content">
+          <h2>Universal Invoice</h2>
+          <input type="file" accept="image/*,application/pdf" onchange="processFile(this, 'Universal Invoice')">
+      </div>
+      <div id="id-document" class="tab-content">
+          <h2>Other</h2>
+          <input type="file" accept="image/*,application/pdf" onchange="processFile(this, 'ID Document')">
+      </div>
+      <div id="output" class="output">
+          <strong>Output:</strong> Results will appear here.
+      </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="ocr.js"></script>
+</body>
+</html>
